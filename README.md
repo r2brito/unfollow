@@ -20,7 +20,7 @@ Este projeto automatiza o processo de deixar de seguir perfis no Instagram utili
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/seuusuario/instagram-unfollow-automation.git
+   git clone git@github.com:r2brito/unfollow.git
    cd instagram-unfollow-automation
    ```
 
