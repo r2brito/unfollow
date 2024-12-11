@@ -2,9 +2,21 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.action_chains import ActionChains
+from dotenv import load_dotenv
+import os
 from time import sleep
 from random import randint
+
+# Carregar variáveis de ambiente
+load_dotenv()
+
+# Obter credenciais do .env
+USERNAME = os.getenv("USERNAME")
+PASSWORD = os.getenv("PASSWORD")
+
+if not USERNAME or not PASSWORD:
+    raise ValueError(
+        "Por favor, configure as variáveis USERNAME e PASSWORD no arquivo .env")
 
 
 def login_instagram(driver, username, password):
@@ -147,8 +159,6 @@ def unfollow_profiles_in_modal(driver, max_unfollows, session_limit, pause_durat
 
 
 # Configurações do usuário
-USERNAME = 'seu_usuario'
-PASSWORD = 'sua_senha'
 MAX_UNFOLLOWS = 3000  # Número total de perfis para parar de seguir
 SESSION_LIMIT = 100   # Número de perfis por sessão
 PAUSE_DURATION = 10   # Pausa entre sessões em minutos

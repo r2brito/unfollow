@@ -20,26 +20,35 @@ Este projeto automatiza o processo de deixar de seguir perfis no Instagram utili
 1. Clone o repositório:
 
    ```bash
-   git clone git@github.com:r2brito/unfollow.git
-   cd instagram-unfollow-automation
+   git clone git@github.com:r2brito/unfollow-bot.git
+   cd unfollow-bot
    ```
 
 2. Instale as bibliotecas necessárias do Python:
 
    ```bash
-   pip install selenium
+   pip install selenium python-dotenv
    ```
 
 3. Baixe o ChromeDriver:
+
    - Encontre a versão correspondente ao seu navegador Chrome em [ChromeDriver Downloads](https://chromedriver.chromium.org/downloads).
    - Coloque o executável `chromedriver` no PATH do sistema ou na pasta do projeto.
 
+4. Crie o arquivo `.env` a partir do exemplo disponível:
+   ```bash
+   cp .env.example .env
+   ```
+   Edite o arquivo `.env` e preencha com suas credenciais do Instagram:
+   ```
+   USERNAME=seu_usuario
+   PASSWORD=sua_senha
+   ```
+
 ## Configuração
 
-Edite o script para configurar suas credenciais do Instagram e preferências de sessão:
+Edite o script para configurar suas preferências de sessão:
 
-- **USERNAME**: Seu nome de usuário do Instagram.
-- **PASSWORD**: Sua senha do Instagram.
 - **MAX_UNFOLLOWS**: Número total de perfis para deixar de seguir.
 - **SESSION_LIMIT**: Número de perfis para deixar de seguir por sessão.
 - **PAUSE_DURATION**: Duração da pausa (em minutos) entre as sessões.
@@ -47,8 +56,6 @@ Edite o script para configurar suas credenciais do Instagram e preferências de 
 Exemplo de configuração no script:
 
 ```python
-USERNAME = 'seu_usuario'
-PASSWORD = 'sua_senha'
 MAX_UNFOLLOWS = 3000
 SESSION_LIMIT = 100
 PAUSE_DURATION = 10
